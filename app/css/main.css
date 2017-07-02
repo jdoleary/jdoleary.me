@@ -8,7 +8,7 @@ body {
   color: #8fd00c; }
 
 .text--red {
-  color: #f20a4f; }
+  color: #a91232; }
 
 .text--mustard {
   color: #b7b74d; }
@@ -30,11 +30,7 @@ body {
 
 .profile-container {
   width: 100%;
-  float: none; }
-  @media (min-width: 600px) {
-    .profile-container {
-      width: 30%;
-      float: left; } }
+  margin-bottom: 20px; }
 
 .photo-container {
   text-align: center;
@@ -61,11 +57,8 @@ body {
   border-radius: 3px;
   padding: 20px;
   width: 100%;
-  float: none; }
-  @media (min-width: 600px) {
-    .info-container {
-      width: 70%;
-      float: left; } }
+  max-width: 800px;
+  margin: 0 auto; }
 
 .links {
   margin: 0;
@@ -74,3 +67,5 @@ body {
   .links li a {
     color: #33a0ff;
     text-decoration: none; }
+    .links li a:visited, .links li a:active {
+      color: #8c5b9f; }
