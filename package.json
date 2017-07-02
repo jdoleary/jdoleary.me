@@ -1,0 +1,26 @@
+{
+  "name": "jdolearyme",
+  "version": "1.0.0",
+  "description": "A profile page for myself.  Style inspired by keybase.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdoleary/jdoleary.me.git"
+  },
+  "author": "Jordan O'Leary",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/jdoleary/jdoleary.me/issues"
+  },
+  "homepage": "https://github.com/jdoleary/jdoleary.me#readme",
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "gulp-sass": "^3.1.0"
+  }
+}
