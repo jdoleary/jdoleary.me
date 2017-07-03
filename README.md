@@ -14,7 +14,7 @@ A profile page for myself.  Style inspired by keybase.io and Cmder (http://cmder
 4. [Link sites-available to sites-enabled](https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-server-blocks-virtual-hosts-on-ubuntu-16-04)
 5. [Secure server](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04)
 6. [Enable HTTPS with Let's Encrypt](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04)
-7. Set up cron job to run `certbot renew` like `15 3 * * * /usr/bin/certbot renew --quiet --renew-hook "/bin/systemctl reload nginx"`
-8. Make regular backups of /etc/letsencrypt
-
-Use https://www.ssllabs.com/ssltest/analyze.html to analyse SSL cert
+7. [Enable HTTP2] (https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-with-http-2-support-on-ubuntu-16-04)
+8. Use https://www.ssllabs.com/ssltest/analyze.html to analyse SSL cert
+9. Set up cron job to run `certbot renew` like `15 3 * * * /usr/bin/certbot renew --quiet --renew-hook "/bin/systemctl reload nginx"`
+10. Make regular backups of /etc/letsencrypt
