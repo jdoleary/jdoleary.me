@@ -3,7 +3,8 @@
 
 body {
   background: #eaeaea;
-  font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif; }
+  font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: 0; }
 
 .text--green {
   color: #8fd00c; }
@@ -27,7 +28,10 @@ body {
   font-weight: 600; }
 
 .total-container {
-  padding: 40px; }
+  padding: 10px; }
+  @media (min-width: 600px) {
+    .total-container {
+      padding: 40px; } }
 
 .profile-container {
   width: 100%;
