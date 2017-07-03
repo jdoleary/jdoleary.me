@@ -74,41 +74,42 @@ body {
 
 .cursor {
   width: 4px;
-  margin: 1px 0;
-  height: 20px;
+  height: 19px;
   background-color: #cbcbcb;
   -webkit-animation: 2s blink step-end infinite;
   -moz-animation: 2s blink step-end infinite;
   -ms-animation: 2s blink step-end infinite;
   -o-animation: 2s blink step-end infinite;
-  animation: 2s blink step-end infinite; }
+  animation: 2s blink step-end infinite;
+  vertical-align: middle;
+  display: inline-block; }
 
 @keyframes "blink" {
   from, to {
-    visibility: hidden; }
+    visibility: visible; }
   50% {
-    visibility: visible; } }
+    visibility: hidden; } }
 
 @-moz-keyframes blink {
   from, to {
-    visibility: hidden; }
+    visibility: visible; }
   50% {
-    visibility: visible; } }
+    visibility: hidden; } }
 
 @-webkit-keyframes "blink" {
   from, to {
-    visibility: hidden; }
+    visibility: visible; }
   50% {
-    visibility: visible; } }
+    visibility: hidden; } }
 
 @-ms-keyframes "blink" {
   from, to {
-    visibility: hidden; }
+    visibility: visible; }
   50% {
-    visibility: visible; } }
+    visibility: hidden; } }
 
 @-o-keyframes "blink" {
   from, to {
-    visibility: hidden; }
+    visibility: visible; }
   50% {
-    visibility: visible; } }
+    visibility: hidden; } }
