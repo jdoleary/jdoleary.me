@@ -9,6 +9,14 @@ $background:#2c2d27;
 *{
   box-sizing:border-box;
 }
+
+*::selection {
+  background: $red;
+}
+*::-moz-selection {
+  background: $red;
+}
+
 body{
   background:#f5f5f5;
   font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
