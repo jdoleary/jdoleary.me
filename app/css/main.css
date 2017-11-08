@@ -90,6 +90,11 @@ body {
   vertical-align: middle;
   display: inline-block; }
 
+.links li {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden; }
+
 @keyframes "blink" {
   from, to {
     visibility: visible; }
