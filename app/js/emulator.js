@@ -3,6 +3,9 @@ var links = document.querySelector('.links');
 var msg = 'Hello! My name\'s Jordan, I\'m a Full Stack Developer.  Check out some of my links above or email me to get in touch!';
 var index = 0;
 
+console.log(msg);
+console.log('Background photo by calvin kan on Unsplash: https://unsplash.com/photos/KSg_Uj5CM3Q');
+
 window.onkeypress = function(e) {
   var keyCode = (typeof e.which == "number") ? e.which : e.keyCode;
   if(index == 0){
