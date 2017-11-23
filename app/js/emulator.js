@@ -6,7 +6,7 @@ var index = 0;
 window.onkeypress = function(e) {
   var keyCode = (typeof e.which == "number") ? e.which : e.keyCode;
   if(index == 0){
-    inputEl.innerHTML = '<span class="text--grey bold">λ </span>'
+    inputEl.innerHTML = '<span class="text--grey bold"> </span>'
   }
   inputEl.innerHTML += msg.slice(index,index+3);
   index+=3;

@@ -1,3 +1,5 @@
+@import 'window';
+
 $green:#8fd00c ;
 $red:#a91232;
 $mustard:#b7b74d;
@@ -19,7 +21,7 @@ $background:#2c2d27;
 
 body{
   background:#f5f5f5;
-  font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: 'PT Mono', monospace;
   margin:0;
 }
 
@@ -77,11 +79,9 @@ body{
 .info-container{
   background:$background;
   letter-spacing: 1px;
-  border-radius:3px;
   padding:20px;
   width: 100%;
   max-width: 800px;
-  margin: 0 auto;
 }
 .links{
   margin:0;
