@@ -19,6 +19,7 @@ $background:#2c2d27;
   background: $red;
 }
 html{
+  min-width: 100%;
   min-height:100%;
 }
 body{
@@ -55,6 +56,9 @@ body{
 
 .total-container{
   padding:24px;
+  @media (max-width: 540px) { 
+    padding:24px 12px;
+  }
 }
 .profile-container{
   width: 100%;
@@ -111,12 +115,6 @@ body{
   animation: 2s blink step-end infinite;
   vertical-align:middle;
   display:inline-block;
-}
-
-.links li{
-  white-space:nowrap;
-  text-overflow: ellipsis;
-  overflow:hidden;
 }
 
 @keyframes "blink" {

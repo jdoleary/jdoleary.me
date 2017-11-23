@@ -1,5 +1,6 @@
 .window {
-  width: 800px;
+  max-width: 800px;
+  width: 100%;
   height: 600px;
   margin: 0 auto; }
   .window .header {
@@ -36,6 +37,7 @@
   background: #a91232; }
 
 html {
+  min-width: 100%;
   min-height: 100%; }
 
 body {
@@ -69,6 +71,9 @@ body {
 
 .total-container {
   padding: 24px; }
+  @media (max-width: 540px) {
+    .total-container {
+      padding: 24px 12px; } }
 
 .profile-container {
   width: 100%;
@@ -121,11 +126,6 @@ body {
   animation: 2s blink step-end infinite;
   vertical-align: middle;
   display: inline-block; }
-
-.links li {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden; }
 
 @keyframes "blink" {
   from, to {
