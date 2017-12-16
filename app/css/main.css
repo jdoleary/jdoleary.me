@@ -1,7 +1,6 @@
 .window {
   max-width: 800px;
   width: 100%;
-  height: 600px;
   margin: 0 auto; }
   .window .header {
     height: 40px;
