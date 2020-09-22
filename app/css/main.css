@@ -1,118 +1,152 @@
 .window {
   max-width: 800px;
   width: 100%;
-  margin: 0 auto; }
-  .window .header {
-    height: 40px;
-    width: 100%;
-    background-color: #e2e2e4;
-    border-radius: 10px 10px 0 0; }
-  .window .buttons {
-    height: 20px;
-    margin-left: 10px; }
-  .window .button {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border-radius: 12px;
-    margin: 10px 2px; }
-    .window .button.red {
-      background-color: #fd5f57;
-      border: 1px solid #dd4239; }
-    .window .button.yellow {
-      background-color: #febc2c;
-      border: 1px solid #dd9d27; }
-    .window .button.green {
-      background-color: #28ca41;
-      border: 1px solid #1ba327; }
+  margin: 0 auto;
+}
+.window .header {
+  height: 40px;
+  width: 100%;
+  background-color: #e2e2e4;
+  border-radius: 10px 10px 0 0;
+}
+.window .buttons {
+  height: 20px;
+  margin-left: 10px;
+}
+.window .button {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 12px;
+  margin: 10px 2px;
+}
+.window .button.red {
+  background-color: #fd5f57;
+  border: 1px solid #dd4239;
+}
+.window .button.yellow {
+  background-color: #febc2c;
+  border: 1px solid #dd9d27;
+}
+.window .button.green {
+  background-color: #28ca41;
+  border: 1px solid #1ba327;
+}
 
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 *::selection {
-  background: #a91232; }
+  background: #a91232;
+}
 
 *::-moz-selection {
-  background: #a91232; }
+  background: #a91232;
+}
 
 html {
   min-width: 100%;
-  min-height: 100%; }
+  min-height: 100%;
+}
 
 body {
-  background: url(/assets/dmitry-sovyak-303050.jpg);
+  background-color:#edeee9;
   background: url(/assets/calvin-kan-114371.jpg);
   background-size: cover;
   background-position: center;
-  font-family: 'PT Mono', monospace;
-  margin: 0; }
+  font-family: "PT Mono", monospace;
+  margin: 0;
+  color: #cbcbcb;
+}
 
 .text--green {
-  color: #8fd00c; }
+  color: #8fd00c;
+}
 
 .text--red {
-  color: #a91232; }
+  color: #a91232;
+}
 
 .text--mustard {
-  color: #b7b74d; }
+  color: #b7b74d;
+}
 
 .text--purple {
-  color: #8c5b9f; }
+  color: #8c5b9f;
+}
 
 .text--white {
-  color: #cbcbcb; }
+  color: #cbcbcb;
+}
 
 .text--grey {
-  color: #808072; }
+  color: #808072;
+}
 
 .bold {
-  font-weight: 600; }
+  font-weight: 600;
+}
 
 .total-container {
-  padding: 24px; }
-  @media (max-width: 540px) {
-    .total-container {
-      padding: 24px 12px; } }
+  padding: 24px;
+}
+@media (max-width: 540px) {
+  .total-container {
+    padding: 24px 12px;
+  }
+}
 
 .profile-container {
   width: 100%;
-  margin-bottom: 24px; }
+  margin-bottom: 24px;
+}
 
 .photo-container {
   text-align: center;
-  margin-bottom: 22px; }
-  .photo-container .photo {
-    border-radius: 50%;
-    vertical-align: middle; }
+  margin-bottom: 22px;
+}
+.photo-container .photo {
+  border-radius: 50%;
+  vertical-align: middle;
+}
 
 .txt {
   color: #444;
-  font-size: 13px; }
+  font-size: 13px;
+}
 
 .name {
   font-size: 18px;
   font-weight: 600;
-  margin-bottom: 8px; }
+  margin-bottom: 8px;
+}
 
 .centered {
-  text-align: center; }
+  text-align: center;
+}
 
 .info-container {
   background: #2c2d27;
   letter-spacing: 1px;
   padding: 20px;
   width: 100%;
-  max-width: 800px; }
+  max-width: 800px;
+}
 
 .links {
   margin: 0;
   padding: 0;
-  list-style: none; }
-  .links li a {
-    color: #33a0ff;
-    text-decoration: none; }
-    .links li a:visited, .links li a:active {
-      color: #8c5b9f; }
+  list-style: none;
+}
+.links li a {
+  color: #33a0ff;
+  text-decoration: none;
+}
+.links li a:visited,
+.links li a:active {
+  color: #8c5b9f;
+}
 
 .cursor {
   width: 4px;
@@ -124,34 +158,50 @@ body {
   -o-animation: 2s blink step-end infinite;
   animation: 2s blink step-end infinite;
   vertical-align: middle;
-  display: inline-block; }
+  display: inline-block;
+}
 
-@keyframes "blink" {
-  from, to {
-    visibility: visible; }
+@keyframes blink {
+  0% {
+    visibility: visible;
+  }
   50% {
-    visibility: hidden; } }
+    visibility: hidden;
+  }
+}
 
 @-moz-keyframes blink {
-  from, to {
-    visibility: visible; }
+  0% {
+    visibility: visible;
+  }
   50% {
-    visibility: hidden; } }
+    visibility: hidden;
+  }
+}
 
-@-webkit-keyframes "blink" {
-  from, to {
-    visibility: visible; }
+@-webkit-keyframes blink {
+  0% {
+    visibility: visible;
+  }
   50% {
-    visibility: hidden; } }
+    visibility: hidden;
+  }
+}
 
-@-ms-keyframes "blink" {
-  from, to {
-    visibility: visible; }
+@-ms-keyframes blink {
+  0% {
+    visibility: visible;
+  }
   50% {
-    visibility: hidden; } }
+    visibility: hidden;
+  }
+}
 
-@-o-keyframes "blink" {
-  from, to {
-    visibility: visible; }
+@-o-keyframes blink {
+  0% {
+    visibility: visible;
+  }
   50% {
-    visibility: hidden; } }
+    visibility: hidden;
+  }
+}
