@@ -1,6 +1,6 @@
 var inputEl = document.getElementById('input');
 var links = document.querySelector('.links');
-var msg = 'Hello! My name\'s Jordan, I\'m a Full Stack Developer.  Check out some of my links above or email me to get in touch!';
+var msg = 'Hello! My name\'s Jordan, I\'m a Full Stack Developer with 10 years of experience.  Check out some of my links above or email me to get in touch!';
 var index = 0;
 
 console.log(msg);
