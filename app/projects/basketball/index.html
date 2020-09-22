@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="user-scalable=no"/>
+    <title>Basketball</title>
+   <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+	<style>
+		*{
+		font-family: 'Lobster', cursive;
+		}
+		.notHighlightable{
+			pointer-events: none;
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		
+		}
+		#info{
+			
+			font-family: 'Arial';
+		
+		}
+		.visible {
+		  visibility: visible;
+		  opacity: 1;
+		  transition: opacity 1s linear;
+		}
+		.hidden {
+		  visibility: hidden;
+		  opacity: 0;
+		  transition: visibility 0s 2s, opacity 0.1s linear;
+		}
+		body{
+			margin: 0;
+		}
+		html { overflow: hidden; }
+		@charset "UTF-8";
+		/*!
+		Animate.css - http://daneden.me/animate
+		Licensed under the MIT license - http://opensource.org/licenses/MIT
+
+		Copyright (c) 2014 Daniel Eden
+		*/
+		.animated {
+		  -webkit-animation-duration: 1s;
+				  animation-duration: 1s;
+		  -webkit-animation-fill-mode: both;
+				  animation-fill-mode: both;
+		}
+
+		.animated.infinite {
+		  -webkit-animation-iteration-count: infinite;
+				  animation-iteration-count: infinite;
+		}
+				/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+
+		@-webkit-keyframes pulse {
+		  0% {
+			-webkit-transform: scale3d(1, 1, 1);
+					transform: scale3d(1, 1, 1);
+					color: black;
+		  }
+
+		  50% {
+			-webkit-transform: scale3d(1.2, 1.2, 1.2);
+					transform: scale3d(1.2, 1.2, 1.2);
+					color: #8c1717;
+		  }
+
+		  100% {
+			-webkit-transform: scale3d(1, 1, 1);
+					transform: scale3d(1, 1, 1);
+					color: black;
+		  }
+		}
+
+		@keyframes pulse {
+		  0% {
+			-webkit-transform: scale3d(1, 1, 1);
+					transform: scale3d(1, 1, 1);
+					color: black;
+		  }
+
+		  50% {
+			-webkit-transform: scale3d(1.2, 1.2, 1.2);
+					transform: scale3d(1.2, 1.2, 1.2);
+					color: #8c1717;
+		  }
+
+		  100% {
+			-webkit-transform: scale3d(1, 1, 1);
+					transform: scale3d(1, 1, 1);
+					color: black;
+		  }
+		}
+
+		.pulse {
+		  -webkit-animation-name: pulse;
+				  animation-name: pulse;
+		}
+		.absoluteCenter{
+			margin: auto;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+		}
+		.joButton{
+			width: 80%;
+			height: 20%;
+			margin-left:10%;
+			margin-right:10%;
+			margin-top:5%;
+			margin-bottom:5%;
+			background-color:#00ff00;
+		}
+		td{
+			padding:10px;
+			border: 2px solid #d0b998;
+			color: #725529
+		}
+		td{
+			border: 2px solid #d0b998;
+		}
+		table{
+			border: 3px solid #d0b998;
+			background-color:#ad926b;
+			border-radius:10px;
+			width:600px;
+			font-size: 60px;
+		}
+		#tableCover{
+			border: 10px solid #aaaaaa;
+			border-radius:10px;
+		
+		}
+        #startScreen{
+            text-align:center;
+            font-size:3em;
+            line-height:3em;
+        }
+		
+	</style>
+	
+	<script src="./stats.js-master/build/stats.min.js"></script>
+	<script type="text/javascript" src="Box2dWeb-2.1.a.3.min.js"></script>
+	<script type="text/javascript" src="particle.js"></script>
+	<script src="jquery-2.1.3.min.js"></script>
+</head>
+
+<body style="background-color:#aaaaaa;">
+	<table id="endScreen" cellpadding=0	cellspacing=0 class="absoluteCenter">
+		<tr style="background-color:#ad816b;">
+			<td colspan=2  style="text-align:center">
+			<div style="color: #724129">Game Over</div>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align:center">Score</td>
+			<td id="endScore" style="text-align:center">000</td>
+		</tr>
+		<tr>
+			<td style="text-align:center">Shots Attempted</td>
+			<td id="endAttempted" style="text-align:center">000</td>
+		</tr>
+		<tr>
+			<td style="text-align:center">Accuracy</td>
+			<td id="endAcc" style="text-align:center">000</td>
+		</tr>
+		<tr id="restartButton" style="background-color:#487465;">
+			<td colspan=2 style="text-align:center">
+			<div style="color: #1c4d3b">Restart</div>
+			</td>
+		</tr>
+	
+	</table>
+	<div id="tableCover" style="background-color:#aaaaaa;" class="absoluteCenter"></div>
+	<div id="gameHolder" class="hidden">
+		<canvas id="canvas"style="position:absolute;">Your browser does not support this functionality.</canvas>	
+		<div id="info" class="notHighlightable" style="position:absolute; top:50px"></div>
+		<div id="countdown"  class="notHighlightable" style="position:absolute; left:0; top:10px; width:100%; text-align:center; font-size:42px;"></div>
+				
+		<div id="statsHolder" style="position: absolute; left:0; top:0;"></div>	
+		<div id="wheretoswipe" class="hidden" style="border-style:solid; width: 80%; height:30%; margin-left:10%; position:absolute; top:60%; font-size: 16px; font-size:5vw; text-align: center;"><span style="position:relative; top: 30%;">Touch Here to Aim</span></div>
+
+	</div>
+	<div id="canvasResizerHack" style="position:absolute; left: 0px; top: 0px; visibility: hidden; width:100%; height:100%;"></div>
+	
+	
+	
+	<div id="startScreen" style="background-color:#ad926b;background-repeat: no-repeat;background-size:100%; background-position:center;">
+		Click or Tap to Begin!
+        <span class="absoluteCenter notHighlightable" style="margin-top:15%;text-align:center;color:#ffffff;font-size:80pt"></span>
+	</div>
+    <script type="text/javascript" src="cloth_sender.js"></script>
+	<script type="text/javascript">
+	
+		if(usingMobile && screen.orientation){
+			screen.orientation.lock('portrait');
+		}
+		
+		var gameStarted = false;
+		$('table').hide();
+		$('#tableCover').hide();
+		//$('#tableCover').width($('table').width());
+		//$('#tableCover').height($('table').height());
+		$('#startScreen').width(window.innerWidth);
+		$('#startScreen').height(window.innerHeight);
+		$('body').on('touchstart',function(){
+				if(!gameStarted){
+				$('#startScreen').hide();
+				$('table').show();
+				$('#tableCover').show();
+				window.setTimeout(function(){
+					initGame();
+				},100);
+			}
+		});
+		
+		$('#startScreen').on('click',function(){
+			$('#startScreen').hide();
+			$('table').show();
+			$('#tableCover').show();
+			initGame();
+			
+		});
+		var emitters,fields;
+		function initGame(){
+				
+			canvas = document.getElementById('canvas');
+			ctx = canvas.getContext('2d');
+			canvas.width =  document.getElementById('canvasResizerHack').clientWidth;
+			if(canvas.width < 800)canvas.width = 800;
+			canvas.height =  document.getElementById('canvasResizerHack').clientHeight;
+			if(canvas.height < 800)canvas.height = 800;
+			console.log('width: ' + canvas.width);
+			console.log('height: ' + canvas.height);
+			
+
+			
+			//particle.js
+			// Add one emitter located at `{ x : 100, y : 230}` from the origin (top left)
+			// that emits at a velocity of `2` shooting out from the right (angle `0`)
+			emitters = [new Emitter(new particle_Vector(0, 0), particle_Vector.fromAngle(0, 2), Math.PI/3)];
+
+			// Add one field located at `{ x : 400, y : 230}` (to the right of our emitter)
+			// that repels with a force of `140`
+			fields = [];//[new particle_Field(new particle_Vector(200, 230), -140)];
+			
+			
+			//init box2d
+			init();
+            StartGame();
+			
+
+		
+		}
+		function StartGame(){
+			if(gameStarted)return;
+			gameStarted = true;
+			createBallAt(hoopx + 2,2.5);
+			start();
+			startCountdown();
+			var gameHolder = document.getElementById('gameHolder');
+			gameHolder.className = "visible";
+		
+		}
+		
+//sound fx
+var sound_ball_bounce = new Audio('ball_bounce.wav');
+var sound_swoosh = new Audio('net.wav');
+var sound_rim = new Audio('rim.wav');
+sound_rim.volume = 0.01;
+var sound_fire = new Audio('onfire.wav');
+var sound_horn = new Audio('horn.wav');
+	</script>
+	
+	
+	
+	
+    <script>
+		var debug = false;
+		if(!debug)$('#stats').hide();
+		//on screen text feedback
+		var infoDiv = document.getElementById('info');
+		var infoList = [];
+		function pushInfo(newInfo){
+			if(debug){
+				infoList.push(newInfo);
+				window.setTimeout(function(){
+					infoList.splice(0,1);
+					infoDiv.innerText = "";
+					for(var i = 0; i < infoList.length; i++){
+						infoDiv.innerText+= "\n" + infoList[i];
+					}
+				},2000);
+				infoDiv.innerText = "";
+				for(var i = 0; i < infoList.length; i++){
+					infoDiv.innerText+= "\n" + infoList[i];
+				}
+			}
+
+		}
+		
+	  function restart(){
+		window.location.reload(false);
+	  }
+		
+
+	  var mouseMessageCounter = 0;
+	$(document).ready(function(){
+		$('#restartButton').on('touchstart',function(){
+			$(this).css('background-color','#668b73');
+			restart();
+		});
+		$('#restartButton').click(function(){
+			$(this).css('background-color','#668b73');
+			restart();
+		});
+	});
+    </script>
+
+</body>
+
+</html>
