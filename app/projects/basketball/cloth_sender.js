@@ -26,14 +26,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
-
-
-//stats.js
-var stats = new Stats();
-stats.setMode(0);
-document.getElementById('statsHolder').appendChild(stats.domElement);
-
-
 var gameOver = false;
 var firstTap = false;
 var usingMobile = false;
@@ -711,7 +703,6 @@ var ballSpawnRight;
 var ballSpawnTop = 2;
 var ballSpawnBottom = 3.5;
 function update() {
-    stats.begin();
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 	var currentCamx = cam.x;
 	var currentCamy = cam.y
@@ -782,10 +773,6 @@ function update() {
     }
     ballLastPosX = ball.m_xf.position.x;
     ballLastPosY = ball.m_xf.position.y;
-
-
-    stats.end();
-
 
 	ctx.translate(-currentCamx,-currentCamy);
     requestAnimFrame(update);
