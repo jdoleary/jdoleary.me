@@ -936,13 +936,13 @@ var draw_scale = debug_draw_scale;
 var boundsscale = 1;
 
 var img_ball = new Image();
-img_ball.src = "basketball.png";
+img_ball.src = "/projects/basketball/basketball.png";
 var img_ball_high = new Image();
-img_ball_high.src = "ball_highlight.png";
+img_ball_high.src = "/projects/basketball/ball_highlight.png";
 var img_arrow = new Image();
-img_arrow.src = "uparrow.png";
+img_arrow.src = "/projects/basketball/uparrow.png";
 var img_buzzer_beater = new Image();
-img_buzzer_beater.src = "buzzer_beater.png";
+img_buzzer_beater.src = "/projects/basketball/buzzer_beater.png";
 //the basketball
 var ball;
 var throw_velx = 0;
