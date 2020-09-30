@@ -1,4 +1,6 @@
-# jdoleary.me
+** Note: This is a build repo only, src not included **
+
+# jordanoleary.me
 
 A profile page for myself.  Style inspired by keybase.io and Cmder (http://cmder.net/)
 
